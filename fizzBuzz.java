@@ -25,7 +25,6 @@ public class fizzBuzz
 			else
 				System.out.println(i);
 			//如果i無法整除則輸出自己
-		}
-			System.out.println("---------------");
+		}			
 	}
 }

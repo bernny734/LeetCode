@@ -6,7 +6,8 @@ public class fizzBuzz
 	public static void main(String[] fizzBuzz) 
 		{
 	    	fizzBuzz(10);
-	  }
+	    	fizzBuzz1();
+	    }
 	//使用兩種方法判斷0到100的字串
 	private static void fizzBuzz(int num) 
 	{
@@ -25,6 +26,19 @@ public class fizzBuzz
 			else
 				System.out.println(i);
 			//如果i無法整除則輸出自己
-		}			
+		}
+			System.out.println("---------------");
+	}
+	private static void fizzBuzz1() 
+	{
+	    IntStream.rangeClosed(0, 10)
+	    //使用IntStream.rangeClosed設定範圍0至100
+	    //IntStream rangeClosed(int startInclusive,int endInclusive)
+	    //startInclusive : 包含的初始值,endInclusive : 包含上限
+	        .mapToObj(
+	        		i -> i % 3 == 0 ? 
+	        				(i % 5 == 0 ? "FizzBuzz" : "Fizz") : 
+	        					(i % 5 == 0 ? "Buzz" : i))
+	        .forEach(System.out::println);
 	}
 }
